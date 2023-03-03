@@ -1,0 +1,121 @@
+/* ------- メイン ------- */
+
+/* 横幅が 768px 以上であれば */
+@media(min-width:768px){
+  main{padding: 15px 10% 0 10%;}
+}
+
+/* 横幅が 767px 以下であれば */
+@media(max-width:767px){
+  main{padding: 20px 5% 0 5%;}
+}
+
+main{
+  background-color:#F0F8FF;
+  padding-bottom: 50px;
+  min-height: 100vh;
+  height: auto;
+}
+
+/* 見出し */
+.caption{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:10px;
+}
+
+.textstyle1{
+  font-size:14px;
+  align-items:center;
+  color:#21538E;
+  word-break: normal; /* 改行が迫られた時に"改行""するか否か */
+}
+
+.textstyle1:hover{
+  opacity:.6; /* 不透明度 0が透明 */
+}
+
+/* ul */
+.notebookarea{
+  flex-wrap:wrap; /* フレックスアイテムを一行に押し込むか,複数行に折り返してもよいかを指定 */
+  display: flex;
+  margin: -3px;
+}
+
+/* li */
+.notebook{
+  padding: 3px;
+  width: calc((100% / 3) - 6px);
+  background-color:##F0F8FF;
+  margin-bottom: 20px;
+}
+
+/* 幅が768px以上あれば */
+@media (min-width:768px){
+  .notebook{
+    width: calc((100% / 5) - 6px);
+  }
+}
+
+.notebookbox{
+  background:#cccccc;
+  padding: 0 0 100%;
+  width: 100%;
+  border-radius: 15px;
+  position: relative;
+}
+
+.eye{
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 100px 100px 100px 100px;
+  color:#ffffff;
+  height:20px;
+  right: 5px;
+  bottom: 10px;
+  width: 60px;
+  position:absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.eye p{
+  font-size: 13px;
+}
+
+.eyeicon{
+  width: 20px;
+  margin-right: 5px;
+}
+
+.notebooktitle{
+  height:50px;
+  padding-top:5px;
+  width: 100%;
+  position: relative;
+  border-radius: 15px;
+}
+
+.style_placeholder1{
+  color: #111;
+  font-size: 15px;
+  /* background:rgba(0,0,0,.05); */
+  font-weight: bold;
+  word-wrap: break-word; /* 折り返し */
+  overflow: hidden; /* はみ出した部分の処理 */
+  text-align: left;
+  line-height: 22px;
+  height:40px;
+  margin:10px 13px 10px 13px;
+  max-width:calc(100% - 20px);
+  position: relative;
+  z-index: 1;
+}
+
+.style_placeholder2{
+  /* background:rgba(0,0,0,.05); */
+  /* height:10px; */
+  /* margin:10px 10px 10px 10px; */
+  /* max-width:calc(75% - 20px); */
+}

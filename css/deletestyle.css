@@ -1,0 +1,144 @@
+/* ------- メイン ------- */
+
+/* 横幅が 768px 以上であれば */
+@media(min-width:768px){
+  main{padding: 30px 10% 0 10%;}
+}
+
+/* 横幅が 767px 以下であれば */
+@media(max-width:767px){
+  main{padding: 30px 5% 0 5%;}
+}
+
+main{
+  background-color:#F0F8FF;
+  /* height: 100vh; */
+  padding-bottom: 50px;
+}
+
+article{
+  background-color: white;
+  padding: 0 20px;
+  padding-top: 10px;
+  box-sizing: border-box;
+}
+
+.titlearea{
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2px;
+  position: relative;
+}
+
+.titlearea p{
+  color: grey;
+  font-size: 13px;
+  position: absolute;
+  top: 47px;
+  left: 25px;
+}
+
+.deletearea{
+  height: auto;
+  width: 100%;
+  background-color: white;
+  min-height: 400px;
+}
+
+.deletebtn{
+  color: white;
+  font-weight: 700;
+  font-family: 'M PLUS Rounded 1c';
+  background: red;
+  border: solid 2px red;
+  border-radius: 5px;
+  outline: 0;   /* クリック時の青フチを消す */
+  transition: .2s; /* hover時の遅延時間 */
+  cursor: pointer;
+  padding: 2px;
+  margin-bottom: 10px;
+}
+
+.deletebtn:hover{
+  opacity: 0.7;
+}
+
+.upbtn{
+  color: white;
+  font-weight: 700;
+  font-family: 'M PLUS Rounded 1c';
+  background: #21538E;
+  border: solid 2px #21538E;
+  border-radius: 5px;
+  outline: 0;   /* クリック時の青フチを消す */
+  transition: .2s; /* hover時の遅延時間 */
+  cursor: pointer;
+  padding: 2px;
+  margin-bottom: 10px;
+}
+
+.upbtn:hover{
+  opacity: 0.7;
+}
+
+/* ul */
+.notebookarea{
+  flex-wrap:wrap; /* フレックスアイテムを一行に押し込むか,複数行に折り返してもよいかを指定 */
+  display: flex;
+  margin: -3px;
+}
+
+/* li */
+.notebook{
+  padding: 3px;
+  width: calc((100% / 3) - 6px);
+  /* background-color: #F0F8FF; */
+  margin-bottom: 20px;
+}
+
+/* 幅が768px以上あれば */
+@media (min-width:768px){
+  .notebook{
+    width: calc((100% / 5) - 6px);
+  }
+}
+
+.notebookbox{
+  background:#cccccc;
+  padding: 0 0 100%;
+  width: 100%;
+  border-radius: 15px;
+  position: relative;
+  cursor: pointer;
+}
+
+.checkbtn{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.notebooktitle{
+  height:50px;
+  padding-top:5px;
+  width: 100%;
+  position: relative;
+  border-radius: 15px;
+}
+
+.style_placeholder1{
+  color: #111;
+  font-size: 15px;
+  /* background:rgba(0,0,0,.05); */
+  font-weight: bold;
+  word-wrap: break-word; /* 折り返し */
+  overflow: hidden; /* はみ出した部分の処理 */
+  text-align: left;
+  line-height: 22px;
+  height:40px;
+  margin:10px 13px 10px 13px;
+  max-width:calc(100% - 20px);
+  z-index: 1;
+}

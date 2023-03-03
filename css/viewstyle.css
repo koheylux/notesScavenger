@@ -1,0 +1,205 @@
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,a,img,q,ol,ul,
+li,form,article,footer,header,main,menu,nav,section{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;  /* 文字の高さを揃える*/
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  /* font-family: 'M PLUS 1p', sans-serif; */
+  font-weight: 700;
+}
+/* ------- メイン ------- */
+
+/* 横幅が 768px 以上であれば */
+@media(min-width:768px){
+  main{padding: 30px 10% 0 10%;}
+}
+
+/* 横幅が 767px 以下であれば */
+@media(max-width:767px){
+  main{padding: 30px 5% 0 5%;}
+}
+
+main{
+  background-color:#F0F8FF;
+  min-height: 100vh;
+  height: 100%;
+  padding-bottom: 50px;
+}
+
+.titlearea{
+  background-color: white;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 2px;
+}
+
+.titlearea p{
+  color: grey;
+  font-size: 13px;
+  position: absolute;
+  top: 43px;
+  left: 30px;
+}
+
+.titlearea h3{
+  width: 60%;
+  text-align: center;
+}
+
+.titlearea img{
+  width: 25px;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  outline: 0;   /* クリック時の青フチを消す */
+  cursor: pointer;
+}
+
+.viewarea{
+  background-color: white;
+  height: auto;
+  padding-top: 15px;
+}
+
+/* 横幅が 768px 以上であれば */
+@media(min-width:768px){
+  .viewarea{display: flex;}
+}
+
+.imagearea{
+  height: auto;
+  /* flex-grow: 2; */
+  width: 70%;
+  padding: 10px 30px;
+  box-sizing: border-box;
+}
+
+section img{
+  max-width: 100%;
+}
+
+.center {
+  margin: 0 auto 0 auto;
+}
+
+.center ul {
+  width: 100%;
+  margin-bottom:20px;
+  display: flex;
+  list-style-type: none;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+
+.center ul::-webkit-scrollbar{
+  display:none;
+}
+
+.center li {
+  /* flex: 1 1 auto; */
+  margin-right: 8px;
+}
+
+.center li:last-of-type {
+  margin-right: 0;
+}
+
+.thumbbox{
+  background:#cccccc;
+  width: 100px;
+  height: 100px;
+}
+
+.infoarea{
+  height: auto;
+  width: 30%;
+  padding: 10px 30px;
+  color: #333;
+}
+
+/* 横幅が 767px 以下であれば */
+@media(max-width:767px){
+  .imagearea{
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .infoarea{
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+.infoarea h4{
+  background-color: #888;
+  color: white;
+  border-radius: 3px;
+  padding: 1px 4px;
+  display: inline-block;
+
+}
+
+.infoarea p{
+  color: #333;
+}
+
+.imageinfo{
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  color: #333;
+  flex-wrap: wrap;
+}
+
+.imageinfo p{
+  font-weight: 300;
+  font-size: 13px;
+}
+
+.profileicon2{
+  border-radius: 50%;
+  height: 33px;
+  width: 33px;
+  border: solid 3px #21538E;
+  background-color: #21538EAA;
+}
+
+.username{
+  margin-left: 10px;
+}
+
+.username:hover{
+  color: #21538E;
+}
+
+.tagview{
+  margin-right: 20px;
+  flex-wrap: wrap;
+}
+
+.eye{
+  /* background-color: rgba(0,0,0,0.1); */
+  /* border-radius: 100px 100px 100px 100px; */
+  color:#ffffff;
+  height:20px;
+  width: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  user-select: none;
+}
+
+.eyeicon{
+  width: 20px;
+  margin-right: 5px;
+}
+
+.eye p{
+  font-size: 12px;
+  font-weight: 500;
+}

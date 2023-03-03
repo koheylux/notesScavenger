@@ -1,0 +1,300 @@
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,a,img,q,ol,ul,
+li,form,article,footer,header,main,menu,nav,section,input,select,option,textarea{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;  /* 文字の高さを揃える*/
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+html{
+  min-width: 350px /* ウィンドウの横幅を規制 */
+}
+
+ol,ul{
+  list-style:none; /* 箇条書き(・)の指定 */
+}
+
+a{
+  text-decoration:none; /* リンクの下線を削除 */
+}
+
+
+/* ------- ヘッダ ------- */
+header{
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.title{
+  width: 100px;
+  margin: 0 auto;
+  display:block;
+}
+
+/* 横幅が 767px 以上であれば */
+@media(min-width:767px){
+  header{
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  .title{
+    width: 200px;
+  }
+}
+
+/* ------- メイン ------- */
+
+/* 横幅が 768px 以上であれば */
+@media(min-width:768px){
+  main{
+    margin: 30px 10%;
+    padding: 8% 10%;
+  }
+}
+
+/* 横幅が 767px 以下であれば */
+@media(max-width:767px){
+  body{padding: 30px 5% 0 5%;}
+  main{padding: 8% 5%;}
+}
+
+main{
+  background-color:#F0F8FF;
+}
+
+.caption{ /* 見出しの設定 */
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+.uploadarea{
+  background: #FFF;
+  border:4px #BBB solid;
+  border-radius: 7px;
+  font-size: 16px;
+  min-height: 130px;
+  height: auto;
+  /* cursor: pointer; */
+  position: relative;
+}
+
+.uploadarea:active{
+  border-color:#21538E;
+}
+
+.upload{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transform: translate(0, 50%);
+}
+
+/* 力技ゾーン */
+.upload img{
+  z-index: 1;
+}
+
+.upload p{
+  z-index: 1;
+}
+
+.upbutton{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  opacity: 0;
+  position: absolute;
+  bottom: -52%;
+  z-index: 30;
+  cursor: pointer;
+  outline: 0;   /* クリック時の青フチを消す */
+  transform: translate(0, -52%);
+}
+
+/* 以上 */
+
+.uploadicon{
+  height: 30px;
+  margin-bottom: 8px;
+}
+
+#preview{
+  margin: 10px;
+}
+
+.textstyle{
+  font-size: 8pt;
+  color: #444;
+  text-align: center;
+}
+
+.titleinputarea{
+  margin-top: 30px;
+
+}
+
+.inputtitle{
+  width: 100%;
+  background-color: white;
+  box-sizing: border-box;
+  border:2px #BBB solid;
+  border-radius: 3px;
+  outline: 0;   /* クリック時の青フチを消す */
+  font-size: 16px;
+  height:40px;
+  padding: 0 15px 0 15px;   /* 検索欄内部の大きさ(上右下左) */
+}
+
+.inputtitle:focus{
+  border-color:#21538E;
+}
+
+
+.subjectselectarea{
+  margin-top: 30px;
+  position: relative;
+}
+
+.subject{
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+  border:2px #BBB solid;
+  border-radius: 3px;
+  outline: 0;   /* クリック時の青フチを消す */
+  font-size: 16px;
+  background-color: white;
+  padding: 0 15px 0 15px;   /* 検索欄内部の大きさ(上右下左) */
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.triangle{
+  position: absolute;
+  color: #BBB;
+  top: 45px;
+  right: 20px;
+}
+
+.subject:focus{
+  border-color:#21538E;
+}
+
+.taginputarea{
+  margin-top: 30px;
+}
+
+.taginput{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.taginput input{
+  width: 100%;
+  background-color: white;
+  box-sizing: border-box;
+  -moz-box-sizing:border-box;
+  border:2px #BBB solid;
+  border-radius: 3px;
+  outline: 0;   /* クリック時の青フチを消す */
+  font-size: 16px;
+  height:40px;
+  padding: 0 15px 0 15px;   /* 検索欄内部の大きさ(上右下左) */
+}
+
+.taginput input:focus{
+  border-color:#21538E;
+}
+
+.inputmargin{
+  margin-right: 10px;
+}
+
+.commentarea{
+  margin-top: 30px;
+  max-width: 100%;
+}
+
+.comments{
+  width: 100%;
+  min-height: 100px;
+  resize: vertical;
+  box-sizing: border-box;
+  border:2px #BBB solid;
+  border-radius: 3px;
+  outline: 0;   /* クリック時の青フチを消す */
+  font-size: 16px;
+  padding: 15px 15px 0 15px;   /* 検索欄内部の大きさ(上右下左) */
+}
+
+.comments:focus{
+  border-color:#21538E;
+}
+
+.submitarea{
+  margin-top: 30px;
+}
+
+.uploadbutton{
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 16px;
+  width: 250px;
+  height: 40px;
+  text-align: center;
+  border: solid 2px #21538E;
+  background: #21538E;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #FFF;
+  text-decoration: none; /* 下線を消す */
+  outline: 0;   /* クリック時の青フチを消す */
+  transition: .2s; /* hover時の遅延時間 */
+  cursor: pointer;
+}
+
+.uploadbutton:hover{
+  opacity: 0.8;
+}
+
+.resetbutton{
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 16px;
+  width: 250px;
+  height: 40px;
+  text-align: center;
+  border: solid 2px #BBB;
+  background: #BBB;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none; /* 下線を消す */
+  outline: 0;   /* クリック時の青フチを消す */
+  transition: .2s; /* hover時の遅延時間 */
+  cursor: pointer;
+}
+
+.resetbutton:hover{
+  opacity: 0.8;
+}
+
+.backbutton{
+  font-size: 13px;
+  color: #21538E;
+  display: block;
+  text-align: center;
+
+}
+
+.backbutton:hover{
+  font-weight: bold;
+}

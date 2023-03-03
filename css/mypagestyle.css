@@ -1,0 +1,320 @@
+/* ------- メイン ------- */
+
+/* 横幅が 768px 以上であれば */
+@media(min-width:768px){
+  main{padding: 30px 10% 0 10%;}
+}
+
+/* 横幅が 767px 以下であれば */
+@media(max-width:767px){
+  main{padding: 30px 5% 0 5%;}
+}
+
+main{
+  background-color:#F0F8FF;
+  min-height: 100vh;
+  height: 100%;
+  padding-bottom: 50px;
+}
+
+article{
+  background-color: white;
+}
+
+.profilearea{
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.personaldata{
+  display: flex;
+  align-items: center;
+  /* margin-left: 30px; */
+}
+
+.bigprficon{
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  min-width: 70px;
+  border: solid 4px #21538E;
+  background-color: #a5f9ffaa;
+  margin-right: 20px;
+}
+
+.profilearea p{
+  width: 100%;
+  font-size: 25px;
+  overflow: hidden; /* はみ出し無視 */
+}
+
+.profilearea a{
+  color: red;
+  font-weight: 500;
+  /*white-space: nowrap; /* 折り返し禁止 */
+}
+
+.viewarea{
+  margin-top: 20px;
+  height: auto;
+  width: 100%;
+  background-color: white;
+  min-height: 400px;
+}
+
+.tab-wrap {
+  display: flex;
+  flex-wrap: wrap; /* boxを複数行に配置 */
+  overflow: hidden; /* はみ出し無視 */
+  padding-bottom: 20px;
+}
+
+.tab-switch{
+  margin-bottom: 20px;
+}
+
+
+/* *** transform と transition *** */
+/*
+transform  : 変形 変形は移動、回転、伸縮、傾斜の4種類
+  translate	移動
+    ex) transform: translate(X軸方向の移動距離,Y軸方向の移動距離);
+    -   transform: translateX(X軸方向の移動距離);
+
+  rotate	  回転
+    ex) transform:rotate(回転角度deg);
+    -   transform:rotateX(X軸の回転角度deg);
+
+  scale	    伸縮
+    ex) transform:scale(数値,数値);
+    -   transform:scaleX(数値);
+
+  skew	    傾斜
+    ex) transform:skewX(X軸の傾斜角度);
+    -   transform:skewX(X軸の傾斜角度);
+
+  transform-origin → 要素の基点を指定
+    ex) transform-origin:X軸の位置 Y軸の位置;
+    -   初期値は50% 50%
+
+
+transition : 変化するまでの時間などを指定
+  -transition-duration → 変化が始まって終わるまでの時間を指定
+
+  -transition-property → 変化を適用するプロパティを指定
+    *                     ex) transition-property:width;
+
+  -transition-timing-function → 変化の度合いを指定
+    * P0とP3がアンカーポイント、P1とP2はハンドル
+    cubic-bezier(P1のx軸の位置, P1のy軸の位置, P2のx軸の位置, P2のy軸の位置）
+
+    ease（初期値）	 開始時と終了時は緩やかに変化。
+	  linear	        開始から終了まで一定に変化。
+	  ease-in	        開始時は緩やかに変化、終了に近づくと早く変化。
+	  ease-out	      開始時は早く変化し、終了時は緩やかに変化。
+	  ease-in-out    	開始時と終了時は、かなり緩やかに変化。
+
+  -transition-delay → 変化が始まるまでの時間を指定
+
+*/
+
+.tab-label {
+	color: Gray;
+	cursor: pointer;
+  min-width: 70px;
+  width: 120px;
+  /* width: 50px; */
+	flex: 1 ;
+	order: -1; /* label部分を先に持ってきている */
+	padding: 12px 0px;
+	text-align: center;
+  justify-content: center;
+	user-select: none; /* ドラッグでテキストを選択できるか指定 */
+	white-space: nowrap; /* 折り返し禁止 */
+  transition: .2s; /* labelの文字色変化時間 */
+  position: relative;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+@media(min-width:768px){
+  .tab-label{
+    padding: 12px 24px;
+    max-width: 120px;
+    font-size: 17px;
+  }
+}
+
+.tab-label:hover {
+	background: #21538E55;
+}
+
+/* 直後の要素のみ */
+.tab-switch:checked + .tab-label{
+	color: #21538E;
+}
+
+.tab-label::after{
+	background: 	#21538E;
+  height: 3px;
+  display: block;
+  position: absolute;
+  left: 0;
+	bottom: 0;
+	content: '';
+	opacity: 0;
+	pointer-events: none; /* リンク等クリックしても反応しないようにする */
+	transform: translateX(100%);
+	transition: ease-in-out .2s 80ms;
+	width: 100%;
+	/* z-index: 1; */
+}
+
+/* ~後にある要素全てに適応 */
+.tab-switch:checked ~ .tab-label::after {
+	transform: translateX(-100%);
+}
+
+/* check有は表示させて移動しない */
+.tab-switch:checked + .tab-label::after {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+.tab-content {
+	height: 0;
+	opacity: 0;
+	padding: 0 20px;
+	transform: translateX(-30%);
+	transition: transform .3s 80ms, opacity .3s 80ms;
+	width: 100%;
+  pointer-events: none; /* リンク等クリックしても反応しないようにする */
+}
+
+.tab-switch:checked ~ .tab-content {
+	transform: translateX(30%);
+}
+
+.tab-switch:checked + .tab-label + .tab-content {
+	height: auto;
+	opacity: 1;
+	order: 1;
+	transform: translateX(0);
+  pointer-events: auto; /* リンク等クリックしても反応しないようにする */
+}
+
+.tab-switch {
+	display: none; /* ラジオボタンの非表示 */
+}
+
+.tab-content h3{
+  margin-bottom: 10px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.deletebtn{
+  color: white;
+  font-weight: 700;
+  font-family: 'M PLUS Rounded 1c';
+  background: red;
+  border: solid 2px red;
+  border-radius: 5px;
+  outline: 0;   /* クリック時の青フチを消す */
+  transition: .2s; /* hover時の遅延時間 */
+  cursor: pointer;
+  padding: 2px;
+  margin-bottom: 10px;
+}
+
+.deletebtn:hover{
+  opacity: 0.7;
+}
+
+.selfID{
+  width: 100%;
+  height: 200px;
+
+  box-sizing: border-box;
+  padding: 10px;
+  font-weight: lighter;
+}
+
+/* ul */
+.notebookarea{
+  flex-wrap:wrap; /* フレックスアイテムを一行に押し込むか,複数行に折り返してもよいかを指定 */
+  display: flex;
+  margin: -3px;
+}
+
+/* li */
+.notebook{
+  padding: 3px;
+  width: calc((100% / 3) - 6px);
+  /* background-color: #F0F8FF; */
+  margin-bottom: 20px;
+}
+
+/* 幅が768px以上あれば */
+@media (min-width:768px){
+  .notebook{
+    width: calc((100% / 5) - 6px);
+  }
+}
+
+.notebookbox{
+  background:#cccccc;
+  padding: 0 0 100%;
+  width: 100%;
+  border-radius: 15px;
+  position: relative;
+}
+
+.eye{
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 100px 100px 100px 100px;
+  color:#ffffff;
+  height:20px;
+  right: 5px;
+  bottom: 10px;
+  width: 60px;
+  position:absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.eye p{
+  font-size: 13px;
+}
+
+.eyeicon{
+  width: 20px;
+  margin-right: 5px;
+}
+
+.notebooktitle{
+  height:50px;
+  padding-top:5px;
+  width: 100%;
+  position: relative;
+  border-radius: 15px;
+}
+
+.style_placeholder1{
+  color: #111;
+  font-size: 15px;
+  /* background:rgba(0,0,0,.05); */
+  font-weight: bold;
+  word-wrap: break-word; /* 折り返し */
+  overflow: hidden; /* はみ出した部分の処理 */
+  text-align: left;
+  line-height: 22px;
+  height:40px;
+  margin:10px 13px 10px 13px;
+  max-width:calc(100% - 20px);
+  z-index: 1;
+}

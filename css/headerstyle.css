@@ -1,0 +1,332 @@
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,a,img,q,ol,ul,
+li,form,article,footer,header,main,menu,nav,section,input,textarea{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;  /* 文字の高さを揃える*/
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  /* font-family: 'M PLUS 1p', sans-serif; */
+  font-weight: 700;
+}
+
+html{
+  min-width: 350px /* ウィンドウの横幅を規制 */
+}
+
+ol,ul{
+  list-style:none; /* 箇条書き(・)の指定 */
+}
+
+a{
+  text-decoration:none; /* リンクの下線を削除 */
+}
+
+
+/* ------- ヘッダ ------- */
+
+header{
+  background-color:#ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  position: relative; /* 影を表示させるために使用 */
+}
+
+.smallsc{
+  padding: 20px 5% 0 5%;
+}
+
+.bigsc{
+  padding: 15px 10% 0 10%;
+}
+
+/* 横幅が 768px 以上であれば */
+@media(min-width:768px){
+  .smallsc{display: none;}
+}
+
+/* 横幅が 767px 以下であれば */
+@media(max-width:767px){
+  .bigsc{display: none;}
+}
+
+.topbar{
+  display: flex;
+  justify-content:space-between; /* 均等配置（両端ボックスは始端と終端） */
+  margin-bottom: 10px;
+}
+
+
+.logoarea{
+  width: 150px;
+}
+
+.iconarea{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* 右寄せ */
+  width: 220px;
+}
+
+.upload-btn{
+  margin: 0 20px;
+  border: solid 2px #21538E;
+  background: #21538E;
+  border-radius: 3px;
+  font-size: 20px;
+  color: #FFF;
+  text-decoration: none; /* 下線を消す */
+  padding: 2px 20px;
+  transition: .4s; /* hover時の遅延時間 */
+  display: flex;
+  align-items: center;
+}
+
+.upload-btn span{
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.upload-btn:hover {
+  opacity: 0.8;
+}
+
+.notebookimg{
+  max-width:100%;
+  max-height:100%;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.profileicon{
+  border-radius: 50%;
+  height: 33px;
+  width: 33px;
+  border: solid 3px #21538E;
+  background-color: #a5dcffaa;
+}
+
+.profilemenu ul{
+  position: absolute;
+  top: 65px;
+  right: 5%;
+  width: 200px;
+  height: auto;
+  background-color: white;
+  border: 2px #21538E solid;
+  border-radius: 3px;
+  z-index: 999;
+}
+
+.profilemenu li{
+  line-height: 50px;
+  padding-left: 10%;
+  font-size:14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.profilemenu li:hover{
+  background-color: #21538E;
+}
+
+.profilemenu a{
+  color: black;
+}
+
+.btnmgn li{
+  margin-top: 15px;
+}
+
+.logoutbtn li{
+  margin-top: 15px;
+  color: red;
+  font-weight: 500;
+}
+
+.searcharea{
+  position: relative;
+  height: 40px;
+}
+
+.search{
+  width: 100%;
+  background: #DDD;
+  border:2px #BBB solid;
+  border-radius: 3px;
+  outline: 0;   /* クリック時の青フチを消す */
+  font-size: 16px;
+  height: 40px;
+  padding: 0 50px 0 15px;   /* 検索欄内部の大きさ(上右下左) */
+  -webkit-appearance: textfield;
+}
+
+.search:focus{
+  border-color:#21538E;
+}
+
+.lupeimg{
+  background-color:transparent;
+  border:none;
+  height:30px;
+  width:30px;
+  position: absolute;
+  right: 5px;
+  top: 7px;
+  outline: 0;   /* クリック時の青フチを消す */
+}
+
+.menu{
+  display: flex;
+  height: 42px;
+  justify-content: space-around; /* 横方向中央均等揃え */
+}
+
+.menu span{
+  color: #333;
+  font-size:14px;
+  white-space: nowrap;
+}
+
+.menu a{
+  font-size:14px;
+  color: #333;
+}
+
+nav img{
+  max-width:100%;
+  max-height:100%;
+  height:13px;
+  padding-right: 5px;
+}
+
+.menulist{
+  width: 100px;
+}
+
+.category{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: 100%;
+}
+
+.ranking{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: 100%;
+}
+
+.lovelist{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: 100%;
+}
+
+.category ul{
+  position: absolute;
+  top: 162px;
+  left: 5%;
+  width: 30%;
+  height: auto;
+  background-color: white;
+  border: 2px #21538E solid;
+  border-radius: 3px;
+  z-index: 999;
+}
+
+.category li{
+  line-height: 40px;
+  padding-left: 10%;
+}
+
+.category li:hover{
+  background-color: #21538E;
+}
+
+.hidden{
+  display: none;
+}
+
+.category a{
+  color: black;
+}
+
+.newbtn{
+  color: #21538E;
+}
+
+.bigtopbar{
+  display: flex;
+  justify-content:space-between; /* 均等配置（両端ボックスは始端と終端） */
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.bigsearcharea{
+  margin: 0 20px;
+  width: 40%;
+  position:relative;
+
+}
+
+/* 横幅が 768px 以上であれば */
+@media(min-width:768px){
+  .profilemenu ul{
+    top: 68px;
+    right: 10%;
+    width: 200px;
+  }
+  .category ul{
+    top: 134px;
+    left: 10%;
+    width: 130px;
+  }
+}
+
+/* 横幅が1068px 以上であれば */
+@media(min-width:1068px){
+  .bigsearcharea{
+    width: 550px;
+  }
+}
+
+.bigsearch{
+  width:100%;
+  background: #DDD;
+  border:2px #BBB solid;
+  border-radius: 3px;
+  outline: 0;   /* クリック時の青フチを消す */
+  font-size: 16px;
+  height:40px;
+  padding: 0 50px 0 15px;   /* 検索欄内部の大きさ(上右下左) */
+  -webkit-appearance: textfield;
+}
+
+.bigsearch:focus{
+  border-color:#21538E;
+}
+
+.biglogoarea img{
+  width: 150px;
+  height: 60px;
+}
+
+.bigmenu span{
+  color: #333;
+  font-size:14px;
+  white-space: nowrap;
+}
+
+.bigmenu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 350px;
+  line-height:42px;
+}
+
+.bigmenu a{
+  font-size:14px;
+  color: #333;
+}
