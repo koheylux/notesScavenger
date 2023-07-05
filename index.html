@@ -2,14 +2,41 @@
 <html>
 
 	<head>
-		<title>notes Scavenger -ノートコミュニケーションサービス-</title>
+		<title>TODOリスト</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
 	</head>
 
 	<body>
-    <div>
+    <div class="input_area">
       <input placeholder="TODOを入力"/>
-      
+      <button>追加</button>
+    </div>
+    <div class="incomplete_area">
+      <p class="title">未完了のTODO</p>
+      <div>
+        <ul class="list_row">
+          <li>TODOです</li>
+          <button>完了</button>
+          <button>削除</button>
+        </ul>
+      </div>
+      <div>
+        <ul class="list_row">
+          <li>TODOです</li>
+          <button>完了</button>
+          <button>削除</button>
+        </ul>
+      </div>
+    </div>
+    <div class="complete_area">
+      <p class="title">完了したTODO</p>
+      <div>
+        <ul class="list_row">
+          <li>TODOでした</li>
+          <button>戻す</button>
+        </ul>
+      </div>
     </div>
     <script src="index.js"></script>
 
