@@ -1,6 +1,7 @@
-body, ul, li{
+body, ul, li, p{
   font-family: sans-serif;
   margin: 0px;
+  /* padding: 0px; */
 }
 
 input{
@@ -22,7 +23,7 @@ button:hover{
   cursor: pointer;
 }
 
-li{
+p{
   margin-right: 8px;
 }
 
@@ -56,6 +57,7 @@ li{
 .title{
   text-align: center;
   margin: 0;
+  padding-bottom: 16px;
   font-weight: bold;
   color: #666;
 }
@@ -63,5 +65,5 @@ li{
 .list_row{
   display: flex;
   align-items: center;
-  padding-bottom: 4px;
+  padding-bottom: 8px;
 } 
